@@ -1,0 +1,11 @@
+image: Ubuntu1804  # Указываем образ для сборки (в данном случае Ubuntu 18.04)
+
+branches:
+  only:
+    - main  # AppVeyor будет запускать сборку только для ветки main
+
+build: off  # Выключаем автоматический build, будем использовать свой скрипт
+
+build_script:
+  - chmod +x gradlew  # Даем права на выполнение файла gradlew
+  - ./gradlew build  # Запускаем сборку проекта с помощью Gradle
